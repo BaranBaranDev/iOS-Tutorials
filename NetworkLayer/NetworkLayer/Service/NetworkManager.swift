@@ -52,7 +52,7 @@ enum NetworkError: Error {
 
 // MARK: - NetworkManagerProtocol
 protocol NetworkManagerProtocol {
-    func request<ResponseType: Codable>(_ endpoint: Endpoint, completion: @escaping(Result<ResponseType, NetworkError>) -> Void)
+    func request<ResponseType: Codable>(_ request: URLRequest, completion: @escaping(Result<ResponseType, NetworkError>) -> Void)
 }
 
 // MARK: - NetworkManager
@@ -62,8 +62,8 @@ final class NetworkManager {
 }
 
 extension NetworkManager: NetworkManagerProtocol {
-    func request<ResponseType: Codable>(_ endpoint: Endpoint, completion: @escaping(Result<ResponseType, NetworkError>) -> Void) {
-        URLSession.shared.dataTask(with: endpoint.request()) { data, response, error in
+    func request<ResponseType: Codable>(_ request: URLRequest, completion: @escaping(Result<ResponseType, NetworkError>) -> Void) {
+        URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard  error == nil else {
                 completion(.failure(.unableToComplete))

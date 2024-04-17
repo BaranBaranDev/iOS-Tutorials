@@ -27,7 +27,7 @@ final class UserNetwork {
 
 extension UserNetwork: UserNetworkProtocol {
     func getUser(completion: @escaping (Result<[User], NetworkError>) -> Void) {
-        NetworkManager.shared.request(Endpoint.getUsers, completion: completion)
+        NetworkManager.shared.request(Endpoint.getUsers.request(), completion: completion)
     }
     
  
