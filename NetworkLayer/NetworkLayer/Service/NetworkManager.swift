@@ -61,6 +61,7 @@ final class NetworkManager {
     private init() {}
 }
 
+
 extension NetworkManager: NetworkManagerProtocol {
     func request<ResponseType: Codable>(_ request: URLRequest, completion: @escaping(Result<ResponseType, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: request) { data, response, error in
