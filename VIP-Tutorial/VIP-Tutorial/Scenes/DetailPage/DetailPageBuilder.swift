@@ -9,8 +9,8 @@ import Foundation
 
 
 enum DetailPageBuilder{
-    static func build() -> DetailPageViewController {
-        let vc = DetailPageViewController()
+    static func build(userModel: UserResponse) -> DetailPageViewController {
+        let vc = DetailPageViewController(people: userModel)
         
         return vc
     }

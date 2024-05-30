@@ -10,13 +10,28 @@ import Foundation
 
 // MARK: - HomePageBusinessLogic
 
+
+// Network işlemleri gibi işlemlerin girdisi
 protocol HomePageBusinessLogic {
     func fetchUser(request: HomePage.FetchUser.Request)
 }
 
+// Taşınacak veri varsa buraya
+protocol HomePageDataStore {
+    // diziler sayfalarda anlamını yitirdiğinden o ilgili yere doğruydan erişim şart bundan dolayı mesela tableview da [UserResponse] kulanılıyorsa bize cell de veya geçişlerde UserResponse gerekir böylece seçili olana direk verilerine de ulaşabiliriz
+    
+    var userModel: UserResponse? { get set }
+    
+}
+
 
 // MARK: - HomePageInteractor
-final class HomePageInteractor {
+final class HomePageInteractor: HomePageDataStore {
+    
+    // Data store logic
+    
+    var userModel: UserResponse? // bunu viewda dolduracağız ayrıca router da da geçiş sağlayacağız buraya ulaşmamız lazım
+    
     
     //MARK: Dependencies
 

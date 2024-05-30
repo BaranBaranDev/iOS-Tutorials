@@ -19,6 +19,8 @@ enum HomePageBuilder {
         //viewController referansı burada ayarlanıyor
         presenter.controller = vc
         router.controller = vc  
+        router.dataStore = interactor
+        
         return vc
         
     }

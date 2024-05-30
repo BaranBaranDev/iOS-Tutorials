@@ -9,6 +9,7 @@ import UIKit
 
 // MARK:  HomePageDisplayLogic
 protocol HomePageDisplayLogic: AnyObject {
+    
     func fetchUserDisplay(viewModel: HomePage.FetchUser.ViewModel)
 }
 
@@ -28,16 +29,19 @@ final class HomePageViewController: UIViewController{
     
     //MARK:  Dependencies
     
-    private let interactor : HomePageBusinessLogic
+
+    private var interactor : HomePageBusinessLogic & HomePageDataStore // bunları typealies yapısına da alabilsin bence daha temiz olur ek bilgi olsun :)
+    
     private let router : HomePageRoutingLogic
 
     
     // MARK:  İnitialization
     
-    init(interactor: HomePageBusinessLogic, router: HomePageRoutingLogic) {
+    init(interactor: HomePageBusinessLogic & HomePageDataStore, router: HomePageRoutingLogic) {
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
+        // Başlar başlamaz ekranda verilerin gelmesi için interactora istek atılır . Eğer query gibi bir şey gönderilmesi gerekiyorsa burada Request içerisine belirtilerek gönderim sağlanır ama şuan ihtiyacımız olmadığından gerek yok istek atmamız yeterli
         interactor.fetchUser(request: HomePage.FetchUser.Request())
     }
     
@@ -112,7 +116,12 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        router.routeDetailPage()    
+        
+        // gönderilecek daha için interactora ulaşaım
+        interactor.userModel = userResArray[indexPath.item]
+        
+        // sayfa geçişi burada ya aynı şekil öncesainde aktarılacak veriyi de belirtelim
+        router.routeDetailPage()
     }
     
 }

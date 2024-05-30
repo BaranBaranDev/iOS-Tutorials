@@ -9,16 +9,28 @@
 import UIKit
 
 
-// MARK: - HomePageRoutingLogic Protocol
+// MARK: - HomePageRoutingLogic Protocol & HomePageDataPassing
 
 protocol HomePageRoutingLogic {
     func routeDetailPage()
 }
 
 
+
+protocol HomePageDataPassing: AnyObject {
+    // interactora girdi sağlayan protokolden gelmeli
+    var dataStore: HomePageDataStore? { get }
+    // get ile sadece okunması gerektiğini belirtik
+}
+
 // MARK: - HomePageRouter Class
-final class HomePageRouter {
+final class HomePageRouter: HomePageDataPassing {
     
+    // data passing logic
+    var dataStore: HomePageDataStore?
+    
+    
+    // viewcontroller özellikleri gerektiği için ayrıca unutma bunun referansını belirtmelisin builder kısmında mutlaka dikkat et
     weak var controller : HomePageViewController?
     
 }
@@ -26,7 +38,11 @@ final class HomePageRouter {
 
 extension HomePageRouter: HomePageRoutingLogic{
     func routeDetailPage() {
-        let vc = DetailPageBuilder.build()
+        // DATA STORE İÇERİSİNDE GÖNDERİLECEK VERİYİ KONTROL EDELİM
+        guard let model = dataStore?.userModel else { return }
+        
+        
+        let vc = DetailPageBuilder.build(userModel: model)
         controller?.navigationController?.pushViewController(vc, animated: true)
     }
     
