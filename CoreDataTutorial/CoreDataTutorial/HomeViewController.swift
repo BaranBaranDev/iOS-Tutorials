@@ -55,7 +55,6 @@ final class HomeViewController: UIViewController{
     
     // MARK: - Setup
     private func setup() {
-        view.backgroundColor = .red
     }
     
     // MARK: Layout
