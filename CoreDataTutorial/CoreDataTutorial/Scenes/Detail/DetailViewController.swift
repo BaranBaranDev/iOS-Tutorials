@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  DetailViewController.swift
 //  CoreDataTutorial
 //
 //  Created by Baran Baran on 15.06.2024.
@@ -9,13 +9,14 @@
 import UIKit
 
 
-protocol HomeDisplayLogic: AnyObject {
+protocol DetailDisplayLogic: AnyObject {
     
+    func display(viewModel: DetailModels.Something.ViewModel)
 }
 
 
 
-final class HomeViewController: UIViewController{
+final class DetailViewController: UIViewController{
 
     // MARK: - Properties
     
@@ -25,14 +26,14 @@ final class HomeViewController: UIViewController{
 
     //MARK: - Dependencies
 
-    private var interactor : HomeBusinessLogic & HomeDataStore
+    private var interactor : DetailBusinessLogic & DetailDataStore
     
-    private let router : HomeRoutingLogic
+    private let router : DetailRoutingLogic
 
     
     // MARK:  İnitialization
     
-    init(interactor: HomeBusinessLogic & HomeDataStore, router: HomeRoutingLogic) {
+    init(interactor: DetailBusinessLogic & DetailDataStore, router: DetailRoutingLogic) {
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
@@ -55,6 +56,7 @@ final class HomeViewController: UIViewController{
     
     // MARK: - Setup
     private func setup() {
+        
     }
     
     // MARK: Layout
@@ -64,8 +66,8 @@ final class HomeViewController: UIViewController{
 }
 
 
-// MARK: - HomeDisplayLogic
+// MARK: - DetailDisplayLogic
 
-extension HomeViewController: HomeDisplayLogic {
+extension DetailViewController: DetailDisplayLogic {
 
 }

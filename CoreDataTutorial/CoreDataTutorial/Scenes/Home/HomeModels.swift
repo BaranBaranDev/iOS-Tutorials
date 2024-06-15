@@ -11,12 +11,16 @@ import UIKit
 enum HomeModels {
   // MARK: Use cases
   
-  enum Something {
+  enum fetch {
       struct Request {}
 
-      struct Response {}
+      struct Response {
+          let users: [UserResponse]
+      }
 
-      struct ViewModel {}
+      struct ViewModel {
+          let users: [UserResponse]
+      }
 
   }
 }

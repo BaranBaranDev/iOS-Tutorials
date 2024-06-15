@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeRoutingLogic {
-  
+  func routeDetail()
 }
 
 protocol HomeDataPassing {
@@ -28,5 +28,11 @@ final class HomeRouter:  HomeDataPassing {
 
 
 extension HomeRouter: HomeRoutingLogic {
+    func routeDetail() {
+        guard let userDataStore = dataStore?.user else { return }
+        
+        controller?.navigationController?.pushViewController(DetailBuilder.build(), animated: true)
+    }
+    
     
 }

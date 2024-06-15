@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomePresentationLogic {
-        
+    func presentFetchUsers(_ response: HomeModels.fetch.Response)
 }
 
 
@@ -23,5 +23,7 @@ final class HomePresenter {
 
 
 extension HomePresenter: HomePresentationLogic {
-    
+    func presentFetchUsers(_ response: HomeModels.fetch.Response) {
+        controller?.displayFetchUsers(HomeModels.fetch.ViewModel(users: response.users))
+    }
 }
