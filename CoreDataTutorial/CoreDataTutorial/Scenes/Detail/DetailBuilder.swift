@@ -10,12 +10,12 @@ import Foundation
 
 
 enum DetailBuilder {
-    static func build() -> DetailViewController {
+    static func build(userDataStore: UserResponse) -> DetailViewController {
         let worker = DetailWorker()
         let presenter = DetailPresenter()
         let router = DetailRouter()
         let interactor = DetailInteractor(presenter: presenter, worker: worker)
-        let vc = DetailViewController(interactor: interactor, router: router)
+        let vc = DetailViewController(interactor: interactor, router: router, userDataStore: userDataStore)
         
         //viewController referansı burada ayarlanıyor
         presenter.controller = vc

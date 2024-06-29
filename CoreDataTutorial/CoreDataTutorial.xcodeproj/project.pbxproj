@@ -22,6 +22,15 @@
 		BE3B1E8E2C1DA7C900104C54 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E872C1DA7C900104C54 /* HomeBuilder.swift */; };
 		BE3B1E8F2C1DA7C900104C54 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E882C1DA7C900104C54 /* HomeInteractor.swift */; };
 		BE3B1E912C1DA92400104C54 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E902C1DA92400104C54 /* ServiceManager.swift */; };
+		BE3B1E932C1DAC2600104C54 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E922C1DAC2600104C54 /* UserResponse.swift */; };
+		BE3B1E962C1DAEB400104C54 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E952C1DAEB400104C54 /* HomeCell.swift */; };
+		BE3B1E9F2C1DBF2F00104C54 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E982C1DBF2F00104C54 /* DetailPresenter.swift */; };
+		BE3B1EA02C1DBF2F00104C54 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E992C1DBF2F00104C54 /* DetailWorker.swift */; };
+		BE3B1EA12C1DBF2F00104C54 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9A2C1DBF2F00104C54 /* DetailRouter.swift */; };
+		BE3B1EA22C1DBF2F00104C54 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9B2C1DBF2F00104C54 /* DetailModels.swift */; };
+		BE3B1EA32C1DBF2F00104C54 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9C2C1DBF2F00104C54 /* DetailViewController.swift */; };
+		BE3B1EA42C1DBF2F00104C54 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9D2C1DBF2F00104C54 /* DetailBuilder.swift */; };
+		BE3B1EA52C1DBF2F00104C54 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9E2C1DBF2F00104C54 /* DetailInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +70,15 @@
 		BE3B1E872C1DA7C900104C54 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		BE3B1E882C1DA7C900104C54 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		BE3B1E902C1DA92400104C54 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		BE3B1E922C1DAC2600104C54 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		BE3B1E952C1DAEB400104C54 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		BE3B1E982C1DBF2F00104C54 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		BE3B1E992C1DBF2F00104C54 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		BE3B1E9A2C1DBF2F00104C54 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		BE3B1E9B2C1DBF2F00104C54 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		BE3B1E9C2C1DBF2F00104C54 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BE3B1E9D2C1DBF2F00104C54 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
+		BE3B1E9E2C1DBF2F00104C54 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +129,7 @@
 			children = (
 				BE3B1E812C1DA79500104C54 /* Service */,
 				BE3B1E802C1DA78F00104C54 /* Model */,
-				BE3B1E7E2C1DA6CE00104C54 /* Scenes */,
+				BE3B1EA72C1DBF5100104C54 /* Scenes */,
 				BE3B1E7D2C1DA52500104C54 /* Files */,
 				BE3B1E632C1DA50E00104C54 /* CoreDataTutorialTests */,
 				BE3B1E6D2C1DA50E00104C54 /* CoreDataTutorialUITests */,
@@ -148,31 +166,10 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
-		BE3B1E7E2C1DA6CE00104C54 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				BE3B1E7F2C1DA76900104C54 /* Home */,
-			);
-			name = Scenes;
-			sourceTree = "<group>";
-		};
-		BE3B1E7F2C1DA76900104C54 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				BE3B1E872C1DA7C900104C54 /* HomeBuilder.swift */,
-				BE3B1E862C1DA7C900104C54 /* HomeViewController.swift */,
-				BE3B1E822C1DA7C900104C54 /* HomePresenter.swift */,
-				BE3B1E832C1DA7C900104C54 /* HomeWorker.swift */,
-				BE3B1E842C1DA7C900104C54 /* HomeRouter.swift */,
-				BE3B1E852C1DA7C900104C54 /* HomeModels.swift */,
-				BE3B1E882C1DA7C900104C54 /* HomeInteractor.swift */,
-			);
-			name = Home;
-			sourceTree = "<group>";
-		};
 		BE3B1E802C1DA78F00104C54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE3B1E922C1DAC2600104C54 /* UserResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +180,52 @@
 				BE3B1E902C1DA92400104C54 /* ServiceManager.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BE3B1EA72C1DBF5100104C54 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B1EA92C1DBF6800104C54 /* Home */,
+				BE3B1EA82C1DBF6000104C54 /* Detail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BE3B1EA82C1DBF6000104C54 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B1E982C1DBF2F00104C54 /* DetailPresenter.swift */,
+				BE3B1E9C2C1DBF2F00104C54 /* DetailViewController.swift */,
+				BE3B1E992C1DBF2F00104C54 /* DetailWorker.swift */,
+				BE3B1E9A2C1DBF2F00104C54 /* DetailRouter.swift */,
+				BE3B1E9B2C1DBF2F00104C54 /* DetailModels.swift */,
+				BE3B1E9D2C1DBF2F00104C54 /* DetailBuilder.swift */,
+				BE3B1E9E2C1DBF2F00104C54 /* DetailInteractor.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BE3B1EA92C1DBF6800104C54 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B1EAA2C1DBF7200104C54 /* View */,
+				BE3B1E872C1DA7C900104C54 /* HomeBuilder.swift */,
+				BE3B1E862C1DA7C900104C54 /* HomeViewController.swift */,
+				BE3B1E852C1DA7C900104C54 /* HomeModels.swift */,
+				BE3B1E832C1DA7C900104C54 /* HomeWorker.swift */,
+				BE3B1E882C1DA7C900104C54 /* HomeInteractor.swift */,
+				BE3B1E822C1DA7C900104C54 /* HomePresenter.swift */,
+				BE3B1E842C1DA7C900104C54 /* HomeRouter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BE3B1EAA2C1DBF7200104C54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B1E952C1DAEB400104C54 /* HomeCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,16 +358,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3B1EA12C1DBF2F00104C54 /* DetailRouter.swift in Sources */,
+				BE3B1EA32C1DBF2F00104C54 /* DetailViewController.swift in Sources */,
 				BE3B1E892C1DA7C900104C54 /* HomePresenter.swift in Sources */,
 				BE3B1E552C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld in Sources */,
 				BE3B1E8A2C1DA7C900104C54 /* HomeWorker.swift in Sources */,
+				BE3B1EA22C1DBF2F00104C54 /* DetailModels.swift in Sources */,
 				BE3B1E4B2C1DA50C00104C54 /* AppDelegate.swift in Sources */,
+				BE3B1EA52C1DBF2F00104C54 /* DetailInteractor.swift in Sources */,
 				BE3B1E8E2C1DA7C900104C54 /* HomeBuilder.swift in Sources */,
 				BE3B1E8C2C1DA7C900104C54 /* HomeModels.swift in Sources */,
 				BE3B1E8F2C1DA7C900104C54 /* HomeInteractor.swift in Sources */,
 				BE3B1E8D2C1DA7C900104C54 /* HomeViewController.swift in Sources */,
 				BE3B1E8B2C1DA7C900104C54 /* HomeRouter.swift in Sources */,
 				BE3B1E912C1DA92400104C54 /* ServiceManager.swift in Sources */,
+				BE3B1E9F2C1DBF2F00104C54 /* DetailPresenter.swift in Sources */,
+				BE3B1EA42C1DBF2F00104C54 /* DetailBuilder.swift in Sources */,
+				BE3B1E962C1DAEB400104C54 /* HomeCell.swift in Sources */,
+				BE3B1EA02C1DBF2F00104C54 /* DetailWorker.swift in Sources */,
+				BE3B1E932C1DAC2600104C54 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

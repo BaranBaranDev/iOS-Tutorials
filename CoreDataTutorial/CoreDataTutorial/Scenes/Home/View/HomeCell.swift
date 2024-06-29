@@ -27,6 +27,8 @@ final class HomeCell: UITableViewCell {
         lbl.textColor = .label
         lbl.textAlignment = .center
         lbl.font = UIFont.preferredFont(forTextStyle: .headline)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+
         return lbl
     }()
     
@@ -50,9 +52,9 @@ final class HomeCell: UITableViewCell {
     // MARK: - Layout
     fileprivate func layout() {
         contentView.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+
     }
 }
 

@@ -21,7 +21,11 @@ final class HomeViewController: UIViewController{
     private var userResponseArray : [UserResponse] = []
     
     // MARK: - UI Elements
-    private lazy var tableView : UITableView = UITableView()
+    private lazy var tableView : UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
 
     //MARK: - Dependencies
 
@@ -50,14 +54,9 @@ final class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
+        layout()
     }
- 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
-    }
-    
+
     
     // MARK: - Setup
     private func setup() {
@@ -65,6 +64,15 @@ final class HomeViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.reuseID)
+    }
+    
+    private func layout(){
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+        ])
     }
 
 }
@@ -108,6 +116,16 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // gönderilecek datanın içini dolduralım
+        let user = userResponseArray[indexPath.item]
+        interactor.user = user
         
+        
+        router.routeDetail()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

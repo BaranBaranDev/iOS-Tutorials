@@ -29,9 +29,10 @@ final class HomeRouter:  HomeDataPassing {
 
 extension HomeRouter: HomeRoutingLogic {
     func routeDetail() {
-        guard let userDataStore = dataStore?.user else { return }
+        guard let user = dataStore?.user else { return }
         
-        controller?.navigationController?.pushViewController(DetailBuilder.build(), animated: true)
+        let rootVC = DetailBuilder.build(userDataStore: user)
+        controller?.navigationController?.pushViewController(rootVC, animated: true)
     }
     
     
