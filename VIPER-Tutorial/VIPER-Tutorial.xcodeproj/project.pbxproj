@@ -16,6 +16,9 @@
 		BE10A58D2C2855B7000812A5 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10A58C2C2855B7000812A5 /* HomeInteractor.swift */; };
 		BE49C9DD2C30191700D6EB9C /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE49C9DC2C30191700D6EB9C /* HomeBuilder.swift */; };
 		BE49C9DF2C301DCB00D6EB9C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE49C9DE2C301DCB00D6EB9C /* HomePresenter.swift */; };
+		BE49C9E12C30366500D6EB9C /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE49C9E02C30366500D6EB9C /* UserResponse.swift */; };
+		BE49C9E42C3037A600D6EB9C /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE49C9E32C3037A600D6EB9C /* ServiceManager.swift */; };
+		BE49C9E72C303AF500D6EB9C /* APIURl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE49C9E62C303AF500D6EB9C /* APIURl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		BE10A58C2C2855B7000812A5 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		BE49C9DC2C30191700D6EB9C /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		BE49C9DE2C301DCB00D6EB9C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		BE49C9E02C30366500D6EB9C /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		BE49C9E32C3037A600D6EB9C /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		BE49C9E62C303AF500D6EB9C /* APIURl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,21 +69,23 @@
 			isa = PBXGroup;
 			children = (
 				BE10A5672C2836A4000812A5 /* AppDelegate.swift */,
+				BE49C9E52C303AE500D6EB9C /* Helper */,
+				BE49C9E22C30379900D6EB9C /* Service */,
 				BE10A5842C284213000812A5 /* Entity */,
 				BE10A5802C2841B3000812A5 /* Modules */,
-				BE10A57B2C2836BE000812A5 /* Files */,
+				BE10A57B2C2836BE000812A5 /* Resources */,
 			);
 			path = "VIPER-Tutorial";
 			sourceTree = "<group>";
 		};
-		BE10A57B2C2836BE000812A5 /* Files */ = {
+		BE10A57B2C2836BE000812A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				BE10A5702C2836A5000812A5 /* Assets.xcassets */,
 				BE10A5722C2836A5000812A5 /* LaunchScreen.storyboard */,
 				BE10A5752C2836A5000812A5 /* Info.plist */,
 			);
-			name = Files;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BE10A5802C2841B3000812A5 /* Modules */ = {
@@ -116,6 +124,7 @@
 		BE10A5842C284213000812A5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				BE49C9E02C30366500D6EB9C /* UserResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -154,6 +163,22 @@
 				BE49C9DC2C30191700D6EB9C /* HomeBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		BE49C9E22C30379900D6EB9C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BE49C9E32C3037A600D6EB9C /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BE49C9E52C303AE500D6EB9C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BE49C9E62C303AF500D6EB9C /* APIURl.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +254,12 @@
 				BE49C9DF2C301DCB00D6EB9C /* HomePresenter.swift in Sources */,
 				BE49C9DD2C30191700D6EB9C /* HomeBuilder.swift in Sources */,
 				BE10A56C2C2836A4000812A5 /* HomeVC.swift in Sources */,
+				BE49C9E12C30366500D6EB9C /* UserResponse.swift in Sources */,
 				BE10A5882C284613000812A5 /* HomeCell.swift in Sources */,
+				BE49C9E42C3037A600D6EB9C /* ServiceManager.swift in Sources */,
 				BE10A5682C2836A4000812A5 /* AppDelegate.swift in Sources */,
 				BE10A58D2C2855B7000812A5 /* HomeInteractor.swift in Sources */,
+				BE49C9E72C303AF500D6EB9C /* APIURl.swift in Sources */,
 				BE10A58B2C28505B000812A5 /* HomeContractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

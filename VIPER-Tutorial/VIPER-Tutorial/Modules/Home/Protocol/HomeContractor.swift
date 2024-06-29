@@ -14,20 +14,17 @@ import Foundation
 
 
 protocol HomeInteractorOutputs: AnyObject {
-    func onSuccessSearch()
-    func onErrorSearch()
+    func onSuccessUsers(_ users: [UserEntity]) // Veri başarıyla çekildiğinde çağrılır
+    func onError(_ error: Error)
 }
 
-protocol HomeViewInputs {
-    func configure()
-    func reloadTableView()
-    func setupTableViewCell()
-    func indicatorView()
-    func sortByTitle()
+protocol HomeViewInputs: AnyObject {
+    func showItems(_ users: [UserEntity]) // Verileri gösterir
+    func showError(_ error: Error) // Hata mesajını gösterir
+
 }
 
-protocol HomeViewPresenterInput {
+protocol HomeViewPresenterInput: AnyObject {
     func viewDidLoad()
-    func onTabCell()
-    func fetchUser()
+  
 }

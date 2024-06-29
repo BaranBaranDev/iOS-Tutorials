@@ -5,11 +5,12 @@
 import UIKit
 
 final class HomeVC: UIViewController {
-    
+    // MARK:  Properties
+    private var userEntity: [UserEntity] = []
     
     //MARK: Dependencies
     
-    public var presenter: HomeViewPresenterInput?
+    weak var presenter: HomeViewPresenterInput?
     
     
     // MARK: - UI Elements
@@ -26,6 +27,7 @@ final class HomeVC: UIViewController {
         super.viewDidLoad()
         setup()
         layout()
+        presenter?.viewDidLoad()
     }
     
     // MARK: - Setup
@@ -52,17 +54,34 @@ final class HomeVC: UIViewController {
     }
     
 }
+// MARK: - HomeViewInputs
+
+extension HomeVC : HomeViewInputs {
+    func showError(_ error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func showItems(_ users: [UserEntity]) {
+        self.userEntity = users
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
+    }
+
+}
 
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return userEntity.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
-        
+        let user = userEntity[indexPath.item]
+        cell.configure(model: user)
         return cell
     }
     
@@ -71,28 +90,3 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - HomeViewInputs
-
-extension HomeVC : HomeViewInputs {
-    func configure() {
-         
-    }
-    
-    func reloadTableView() {
-        
-    }
-    
-    func setupTableViewCell() {
-        
-    }
-    
-    func indicatorView() {
-        
-    }
-    
-    func sortByTitle() {
-        
-    }
-    
-    
-}

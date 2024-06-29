@@ -41,6 +41,13 @@ final class HomeCell: UITableViewCell {
         titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
 
     }
+    
+    // MARK: - Configure
+    public func configure(model: UserEntity?) {
+        guard let model = model else { return }
+        self.titleLabel.text = model.name
+
+    }
 }
 
 

@@ -7,35 +7,44 @@
 
 import Foundation
 
-// Servic veya Veri işlemleri
-protocol HomeBusinessLogic: AnyObject {
-    func fetchCall()
+
+
+
+
+// Interactor protokolü: View'dan gelen istekleri alan protokol
+protocol HomeInteractorInputProtocol: AnyObject {
+    func fetchUser() // API'den veri çekme isteği
 }
 
-// Geçiş yaparkan gönderilecek veriler mesela ..
-protocol HomeDataStore: AnyObject {
-    
-}
 
-
-
-
-final class HomeInteractor: HomeDataStore {
+final class HomeInteractor {
     //MARK: Dependencies
     
-    public var presenter: HomeInteractorOutputs?
-   // private var networkManager: INetworkService
+    weak var presenter: HomeInteractorOutputs?
+    private var service: ServiceManagerProtocol
     
-  //  init(networkManager: INetworkService) {
-   //     self.networkManager = networkManager
-   // }
+    init(service: ServiceManagerProtocol) {
+        self.service = service
+    }
 }
 
 
 
-extension HomeInteractor: HomeBusinessLogic {
-    func fetchCall() {
-        // Modelden data geldi diyelim
-        presenter?.onSuccessSearch()
+extension HomeInteractor: HomeInteractorInputProtocol {
+    func fetchUser() {
+        print(APIUrl.usersURL.rawValue)
+        service.fetchData(url: APIUrl.usersURL.rawValue) { [weak self] (result: Result<[UserEntity], Error>) in // result türünü belirtik böylece completion da decode edilecek entity yazdık
+            
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let users):
+                print("Success: \(users)") // Debug için ekledik
+                self.presenter?.onSuccessUsers(users)
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)") // Debug için ekledik
+                self.presenter?.onError(error)
+            }
+        }
     }
 }

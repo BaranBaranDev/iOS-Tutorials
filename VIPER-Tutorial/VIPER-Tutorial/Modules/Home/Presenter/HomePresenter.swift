@@ -6,18 +6,21 @@
 import Foundation
 
 
+
+
+
 final class HomePresenter {
     
-    typealias HomeInteractorType = HomeBusinessLogic & HomeDataStore
     
-     //MARK: Dependencies
-    private var view: HomeViewInputs
-    private var interactor: HomeInteractorType
+    
+    //MARK: Dependencies
+    weak var view: HomeViewInputs?
+    private var interactor: HomeInteractorInputProtocol
     
     // MARK:  İnitialization
     
-    init(view: HomeViewInputs, interactor: HomeInteractorType) {
-        self.view = view
+    init(interactor: HomeInteractorInputProtocol) {
+        
         self.interactor = interactor
     }
     
@@ -27,33 +30,19 @@ final class HomePresenter {
 // Ekranın yapacağı ana logicler
 extension HomePresenter: HomeViewPresenterInput {
     func viewDidLoad() {
-        
+        interactor.fetchUser()
     }
-    
-    func onTabCell() {
-        
-    }
-    
-    func fetchUser() {
-        interactor.fetchCall()
-        view.reloadTableView()
-    }
-    
-
-    
 }
 
 // BusinessLogic
 extension HomePresenter: HomeInteractorOutputs {
-    func onSuccessSearch() {
-        
+    func onSuccessUsers(_ users: [UserEntity]) {
+        view?.showItems(users)
     }
     
-    func onErrorSearch() {
-        
+    func onError(_ error: Error) {
+        view?.showError(error)
     }
-    
-
     
 }
 

@@ -12,11 +12,17 @@ enum HomeBuilder {
     static func build() -> HomeVC {
        
         let vc = HomeVC()
-        let interactor = HomeInteractor()
-        let presenter = HomePresenter(view: vc, interactor: interactor)
+        let service = ServiceManager()
+        let interactor = HomeInteractor(service: service)
+        let presenter = HomePresenter(interactor: interactor)
         
-        vc.presenter = presenter  
+        // ref belirtme
+        
+        vc.presenter = presenter
         interactor.presenter = presenter
+        presenter.view = vc
+        
+        
         
         return vc
     }
