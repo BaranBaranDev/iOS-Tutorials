@@ -27,7 +27,12 @@ final class HomeVC: UIViewController {
         super.viewDidLoad()
         setup()
         layout()
-        presenter?.viewDidLoad()
+        goPresenter()
+}
+    
+    private func goPresenter() {
+        guard let presenter = presenter else { return }
+        presenter.viewDidLoad()
     }
     
     // MARK: - Setup
@@ -52,6 +57,9 @@ final class HomeVC: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+    
+    
+    
     
 }
 // MARK: - HomeViewInputs

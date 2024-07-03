@@ -5,31 +5,22 @@
  */
 import Foundation
 
-
-
-
-
 final class HomePresenter {
-    
-    
-    
     //MARK: Dependencies
     weak var view: HomeViewInputs?
     private var interactor: HomeInteractorInputProtocol
     
-    // MARK:  İnitialization
-    
+    // MARK:  Initialization
     init(interactor: HomeInteractorInputProtocol) {
-        
+       
         self.interactor = interactor
     }
-    
 }
-
 
 // Ekranın yapacağı ana logicler
 extension HomePresenter: HomeViewPresenterInput {
     func viewDidLoad() {
+        print("Presenter")
         interactor.fetchUser()
     }
 }
@@ -43,6 +34,4 @@ extension HomePresenter: HomeInteractorOutputs {
     func onError(_ error: Error) {
         view?.showError(error)
     }
-    
 }
-
