@@ -12,28 +12,21 @@ final class HomeVC: UIViewController {
     // MARK: - UI Elements
     
     private lazy var collectionView: UICollectionView = {
-        /*
-         // Layout oluştur ve bölümü layout'a ekle
-         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
-         return AppStoreVC.createFeaturedSection()
-         }
-         */
-        
+        // CollectionView layout'unu oluştur
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
+            // Section index'e göre layout oluştur
             switch sectionIndex {
-                
-            case 0 :
+            case 0:
                 return HomeVC.createFeaturedSection()
-                
-            case 1 :
+            case 1:
                 return HomeVC.createRegularSection()
-                
             default:
                 return nil
             }
         }
         
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)  // CollectionView oluştur ve layout'u ata
+        // CollectionView'i oluştur ve layout'u ata
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -46,7 +39,8 @@ final class HomeVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds // viewDidLayoutSubviews yerine Auto Layout kullanmak daha iyi bir yöntem
+        // CollectionView'in frame'ini ana view'in boyutlarına ayarla
+        collectionView.frame = view.bounds
     }
     
     // MARK: - Setup
@@ -54,17 +48,18 @@ final class HomeVC: UIViewController {
         // CollectionView arka plan rengini ayarla
         collectionView.backgroundColor = .systemBackground
         
-        // CollectionView'i alt view olarak ekle
+        // CollectionView'i ana view'e ekle
         view.addSubview(collectionView)
         
-        // NavBar yapılandır
+        // NavBar'ı yapılandır
         title = "Home"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        // CollectionView yapılandır
+        // CollectionView'i yapılandır
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(HeaderCell.self, forCellWithReuseIdentifier: HeaderCell.reuseID)
+        collectionView.register(LabelCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LabelCell.reuseIdentifier)
         
         // CollectionView'e Auto Layout ekle
         NSLayoutConstraint.activate([
@@ -86,13 +81,12 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     // Her bir bölümdeki hücre sayısı
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // Section index'e göre hücre oluştur
         switch section {
-        case 0 :
+        case 0:
             return 3
-            
         case 1:
             return 5
-            
         default:
             return 0
         }
@@ -102,10 +96,11 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
+            // İlk bölüm için HeaderCell kullan
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCell.reuseID, for: indexPath) as! HeaderCell
             return cell
-            
         case 1:
+            // İkinci bölüm için HeaderCell kullan ve arka plan rengini mavi yap
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCell.reuseID, for: indexPath) as! HeaderCell
             cell.backgroundColor = .blue
             return cell
@@ -113,11 +108,19 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             fatalError("Error")
         }
     }
+    
+    // Supplementary view (header) ayarları
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        // LabelCell'i header olarak kullan
+        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LabelCell.reuseIdentifier, for: indexPath) as! LabelCell
+        cell.label.text = "Compositional Layout"
+        return cell
+    }
 }
-
 
 // MARK: - Create Section : -> NSCollectionLayoutSection
 extension HomeVC {
+    // Öne çıkan bölüm (featured section) oluştur
     static func createFeaturedSection() -> NSCollectionLayoutSection? {
         // Item boyutunu tanımla
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.8))
@@ -138,8 +141,7 @@ extension HomeVC {
         return section
     }
     
-    
-    
+    // Normal bölüm (regular section) oluştur
     static func createRegularSection() -> NSCollectionLayoutSection? {
         // Item boyutunu tanımla: Genişliği collection view'in yarısı, yüksekliği yüksekliğe eşit
         let layoutItemSize = NSCollectionLayoutSize(
@@ -152,31 +154,30 @@ extension HomeVC {
         layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         // Grup boyutunu tanımla: Genişliği collection view'in tamamı, yüksekliği iki item'in toplam yüksekliği
-            let layoutGroupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .fractionalWidth(0.5) // azaltıkça yakınlaşır, arttırdıkça uzaklaşır
-   
-            )
+        let layoutGroupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalWidth(0.5) // azaltıkça yakınlaşır, arttırdıkça uzaklaşır
+        )
         
         // Grup oluştur ve item'ları gruba ekle
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
-        
+         
         // Bölüm oluştur ve grubu bölüme ekle
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-       
-        // yana kaydırmaya onay ve animasyonu
-        //  layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
-      
-        // NSCollectionLayoutBoundarySupplementaryItem, bir collection view'a başlık, altbilgi veya arka plan gibi ek görsel öğeler eklemek için kullanılır.
+     
+        // Header eklemek için supplementary item oluştur
         let supplementaryItem = NSCollectionLayoutBoundarySupplementaryItem(
-            // Genişlik Tamamı, uzunluk 50 brm kadar
+            // Genişlik tamamı, yükseklik 50 birim
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)),
-            elementKind: "Test Cell",
-            alignment: .topLeading )
+            // Supplementary view'in türü section header
+            elementKind: UICollectionView.elementKindSectionHeader,
+            // Header'ın hizalaması üst ve sol
+            alignment: .topLeading
+        )
         
+        // Section'a supplementary item'ı ekle
         layoutSection.boundarySupplementaryItems = [supplementaryItem]
 
-        
         return layoutSection
     }
 }
