@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1B37592C4FCFDB00883B97 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B37582C4FCFDB00883B97 /* MainVC.swift */; };
 		BE3B1E4B2C1DA50C00104C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E4A2C1DA50C00104C54 /* AppDelegate.swift */; };
 		BE3B1E552C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E532C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld */; };
 		BE3B1E572C1DA50E00104C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE3B1E562C1DA50E00104C54 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE1B37582C4FCFDB00883B97 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		BE3B1E472C1DA50C00104C54 /* CoreDataTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3B1E4A2C1DA50C00104C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE3B1E542C1DA50C00104C54 /* CoreDataTutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTutorial.xcdatamodel; sourceTree = "<group>"; };
@@ -106,6 +108,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE1B37572C4FCFC800883B97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE1B37582C4FCFDB00883B97 /* MainVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE1B375A2C4FD13900883B97 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B1E4A2C1DA50C00104C54 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		BE3B1E3E2C1DA50C00104C54 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +145,8 @@
 		BE3B1E492C1DA50C00104C54 /* CoreDataTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				BE1B375A2C4FD13900883B97 /* App */,
+				BE1B37572C4FCFC800883B97 /* Controller */,
 				BE3B1E812C1DA79500104C54 /* Service */,
 				BE3B1E802C1DA78F00104C54 /* Model */,
 				BE3B1EA72C1DBF5100104C54 /* Scenes */,
@@ -158,7 +178,6 @@
 		BE3B1E7D2C1DA52500104C54 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				BE3B1E4A2C1DA50C00104C54 /* AppDelegate.swift */,
 				BE3B1E562C1DA50E00104C54 /* Assets.xcassets */,
 				BE3B1E582C1DA50E00104C54 /* LaunchScreen.storyboard */,
 				BE3B1E5B2C1DA50E00104C54 /* Info.plist */,
@@ -359,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3B1EA12C1DBF2F00104C54 /* DetailRouter.swift in Sources */,
+				BE1B37592C4FCFDB00883B97 /* MainVC.swift in Sources */,
 				BE3B1EA32C1DBF2F00104C54 /* DetailViewController.swift in Sources */,
 				BE3B1E892C1DA7C900104C54 /* HomePresenter.swift in Sources */,
 				BE3B1E552C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld in Sources */,

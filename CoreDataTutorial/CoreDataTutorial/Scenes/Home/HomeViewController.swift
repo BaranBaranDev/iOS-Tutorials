@@ -9,15 +9,16 @@
 import UIKit
 
 
+// MARK: - HomeDisplayLogic
 protocol HomeDisplayLogic: AnyObject {
     func displayFetchUsers(_ viewModel: HomeModels.fetch.ViewModel)
 }
 
 
-
+// MARK: - HomeViewController
 final class HomeViewController: UIViewController{
 
-    // MARK: - Properties
+    // MARK:  Properties
     private var userResponseArray : [UserResponse] = []
     
     // MARK: - UI Elements
@@ -26,6 +27,8 @@ final class HomeViewController: UIViewController{
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    
 
     //MARK: - Dependencies
 
@@ -103,9 +106,8 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as? HomeCell
         else { return UITableViewCell() }
         
-        let user = userResponseArray[indexPath.item]
-        cell.user = user
-
+        let model = userResponseArray[indexPath.item]
+        cell.configure(model)
         return cell
         
     }
@@ -128,4 +130,10 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+}
+
+
+
+#Preview {
+    MainVC()
 }

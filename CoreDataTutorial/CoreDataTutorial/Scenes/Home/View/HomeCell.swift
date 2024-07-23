@@ -7,32 +7,36 @@
 
 import UIKit
 
-
 final class HomeCell: UITableViewCell {
     
-    // MARK:  Properties
+    // MARK: Properties
     public static let reuseID: String = "HomeCell"
     
-    public var user: UserResponse? {
-        didSet {
-            configureUI()
-        }
-    }
+ 
+    
     
     
     // MARK: - UI
     
-    private lazy var label: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .label
-        lbl.textAlignment = .center
+        lbl.textAlignment = .left
         lbl.font = UIFont.preferredFont(forTextStyle: .headline)
         lbl.translatesAutoresizingMaskIntoConstraints = false
-
         return lbl
     }()
     
-    // MARK: - İnitialization
+    private lazy var favoriteButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(systemName: "star"), for: .normal)
+        btn.tintColor = .systemYellow
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layout()
@@ -42,21 +46,38 @@ final class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - Configure
-    fileprivate func configureUI() {
-        guard let user = user else { return }
-        label.text = user.name
+    public func configure(_ model: UserResponse?) {
+        guard let model = model else { return }
+        nameLabel.text = model.name
     }
     
     // MARK: - Layout
     fileprivate func layout() {
-        contentView.addSubview(label)
-        label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(favoriteButton)
 
+        NSLayoutConstraint.activate([
+            // Label constraints
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            
+            // Button constraints
+            favoriteButton.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 8),
+            favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            favoriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 30),
+            favoriteButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    // MARK: - Actions
+    @objc fileprivate func favoriteButtonTapped() {
+        print("Favorite button tapped")
     }
 }
 
-
-
+// MARK: - Preview
+#Preview {
+    HomeBuilder.build()
+}
