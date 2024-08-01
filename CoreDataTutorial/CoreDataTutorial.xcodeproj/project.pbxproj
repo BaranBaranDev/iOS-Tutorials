@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BE1B37592C4FCFDB00883B97 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B37582C4FCFDB00883B97 /* MainVC.swift */; };
 		BE3B1E4B2C1DA50C00104C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E4A2C1DA50C00104C54 /* AppDelegate.swift */; };
-		BE3B1E552C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E532C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld */; };
 		BE3B1E572C1DA50E00104C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE3B1E562C1DA50E00104C54 /* Assets.xcassets */; };
 		BE3B1E5A2C1DA50E00104C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3B1E582C1DA50E00104C54 /* LaunchScreen.storyboard */; };
 		BE3B1E652C1DA50E00104C54 /* CoreDataTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E642C1DA50E00104C54 /* CoreDataTutorialTests.swift */; };
@@ -33,6 +32,14 @@
 		BE3B1EA42C1DBF2F00104C54 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9D2C1DBF2F00104C54 /* DetailBuilder.swift */; };
 		BE3B1EA52C1DBF2F00104C54 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9E2C1DBF2F00104C54 /* DetailInteractor.swift */; };
 		BE8366842C5B85E7007E5162 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8366832C5B85E7007E5162 /* CoreDataManager.swift */; };
+		BE83668A2C5B8E52007E5162 /* CoreDataTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE8366882C5B8E52007E5162 /* CoreDataTutorial.xcdatamodeld */; };
+		BE8366932C5B8F83007E5162 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83668C2C5B8F83007E5162 /* FavoritePresenter.swift */; };
+		BE8366942C5B8F83007E5162 /* FavoriteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83668D2C5B8F83007E5162 /* FavoriteWorker.swift */; };
+		BE8366952C5B8F83007E5162 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83668E2C5B8F83007E5162 /* FavoriteRouter.swift */; };
+		BE8366962C5B8F83007E5162 /* FavoriteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83668F2C5B8F83007E5162 /* FavoriteModels.swift */; };
+		BE8366972C5B8F83007E5162 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8366902C5B8F83007E5162 /* FavoriteViewController.swift */; };
+		BE8366982C5B8F83007E5162 /* FavoriteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8366912C5B8F83007E5162 /* FavoriteBuilder.swift */; };
+		BE8366992C5B8F83007E5162 /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8366922C5B8F83007E5162 /* FavoriteInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +63,6 @@
 		BE1B37582C4FCFDB00883B97 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		BE3B1E472C1DA50C00104C54 /* CoreDataTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3B1E4A2C1DA50C00104C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE3B1E542C1DA50C00104C54 /* CoreDataTutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTutorial.xcdatamodel; sourceTree = "<group>"; };
 		BE3B1E562C1DA50E00104C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE3B1E592C1DA50E00104C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE3B1E5B2C1DA50E00104C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +89,14 @@
 		BE3B1E9D2C1DBF2F00104C54 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 		BE3B1E9E2C1DBF2F00104C54 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		BE8366832C5B85E7007E5162 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BE8366892C5B8E52007E5162 /* CoreDataTutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTutorial.xcdatamodel; sourceTree = "<group>"; };
+		BE83668C2C5B8F83007E5162 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		BE83668D2C5B8F83007E5162 /* FavoriteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWorker.swift; sourceTree = "<group>"; };
+		BE83668E2C5B8F83007E5162 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
+		BE83668F2C5B8F83007E5162 /* FavoriteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModels.swift; sourceTree = "<group>"; };
+		BE8366902C5B8F83007E5162 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		BE8366912C5B8F83007E5162 /* FavoriteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBuilder.swift; sourceTree = "<group>"; };
+		BE8366922C5B8F83007E5162 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +143,7 @@
 		BE3B1E3E2C1DA50C00104C54 = {
 			isa = PBXGroup;
 			children = (
+				BE8366882C5B8E52007E5162 /* CoreDataTutorial.xcdatamodeld */,
 				BE3B1E492C1DA50C00104C54 /* CoreDataTutorial */,
 				BE3B1E482C1DA50C00104C54 /* Products */,
 			);
@@ -155,7 +170,6 @@
 				BE3B1E7D2C1DA52500104C54 /* Files */,
 				BE3B1E632C1DA50E00104C54 /* CoreDataTutorialTests */,
 				BE3B1E6D2C1DA50E00104C54 /* CoreDataTutorialUITests */,
-				BE3B1E532C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld */,
 			);
 			path = CoreDataTutorial;
 			sourceTree = "<group>";
@@ -207,6 +221,7 @@
 		BE3B1EA72C1DBF5100104C54 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BE83668B2C5B8F6D007E5162 /* Favorite */,
 				BE3B1EA92C1DBF6800104C54 /* Home */,
 				BE3B1EA82C1DBF6000104C54 /* Detail */,
 			);
@@ -248,6 +263,20 @@
 				BE3B1E952C1DAEB400104C54 /* HomeCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BE83668B2C5B8F6D007E5162 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				BE83668C2C5B8F83007E5162 /* FavoritePresenter.swift */,
+				BE83668D2C5B8F83007E5162 /* FavoriteWorker.swift */,
+				BE83668E2C5B8F83007E5162 /* FavoriteRouter.swift */,
+				BE83668F2C5B8F83007E5162 /* FavoriteModels.swift */,
+				BE8366902C5B8F83007E5162 /* FavoriteViewController.swift */,
+				BE8366912C5B8F83007E5162 /* FavoriteBuilder.swift */,
+				BE8366922C5B8F83007E5162 /* FavoriteInteractor.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,26 +409,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8366982C5B8F83007E5162 /* FavoriteBuilder.swift in Sources */,
 				BE3B1EA12C1DBF2F00104C54 /* DetailRouter.swift in Sources */,
 				BE1B37592C4FCFDB00883B97 /* MainVC.swift in Sources */,
+				BE83668A2C5B8E52007E5162 /* CoreDataTutorial.xcdatamodeld in Sources */,
 				BE3B1EA32C1DBF2F00104C54 /* DetailViewController.swift in Sources */,
 				BE3B1E892C1DA7C900104C54 /* HomePresenter.swift in Sources */,
-				BE3B1E552C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld in Sources */,
 				BE3B1E8A2C1DA7C900104C54 /* HomeWorker.swift in Sources */,
 				BE3B1EA22C1DBF2F00104C54 /* DetailModels.swift in Sources */,
 				BE3B1E4B2C1DA50C00104C54 /* AppDelegate.swift in Sources */,
+				BE8366952C5B8F83007E5162 /* FavoriteRouter.swift in Sources */,
 				BE3B1EA52C1DBF2F00104C54 /* DetailInteractor.swift in Sources */,
 				BE3B1E8E2C1DA7C900104C54 /* HomeBuilder.swift in Sources */,
 				BE3B1E8C2C1DA7C900104C54 /* HomeModels.swift in Sources */,
 				BE3B1E8F2C1DA7C900104C54 /* HomeInteractor.swift in Sources */,
+				BE8366942C5B8F83007E5162 /* FavoriteWorker.swift in Sources */,
 				BE8366842C5B85E7007E5162 /* CoreDataManager.swift in Sources */,
 				BE3B1E8D2C1DA7C900104C54 /* HomeViewController.swift in Sources */,
 				BE3B1E8B2C1DA7C900104C54 /* HomeRouter.swift in Sources */,
+				BE8366992C5B8F83007E5162 /* FavoriteInteractor.swift in Sources */,
 				BE3B1E912C1DA92400104C54 /* ServiceManager.swift in Sources */,
 				BE3B1E9F2C1DBF2F00104C54 /* DetailPresenter.swift in Sources */,
+				BE8366962C5B8F83007E5162 /* FavoriteModels.swift in Sources */,
 				BE3B1EA42C1DBF2F00104C54 /* DetailBuilder.swift in Sources */,
 				BE3B1E962C1DAEB400104C54 /* HomeCell.swift in Sources */,
+				BE8366972C5B8F83007E5162 /* FavoriteViewController.swift in Sources */,
 				BE3B1EA02C1DBF2F00104C54 /* DetailWorker.swift in Sources */,
+				BE8366932C5B8F83007E5162 /* FavoritePresenter.swift in Sources */,
 				BE3B1E932C1DAC2600104C54 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,12 +775,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BE3B1E532C1DA50C00104C54 /* CoreDataTutorial.xcdatamodeld */ = {
+		BE8366882C5B8E52007E5162 /* CoreDataTutorial.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BE3B1E542C1DA50C00104C54 /* CoreDataTutorial.xcdatamodel */,
+				BE8366892C5B8E52007E5162 /* CoreDataTutorial.xcdatamodel */,
 			);
-			currentVersion = BE3B1E542C1DA50C00104C54 /* CoreDataTutorial.xcdatamodel */;
+			currentVersion = BE8366892C5B8E52007E5162 /* CoreDataTutorial.xcdatamodel */;
 			path = CoreDataTutorial.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import CoreData
 
 final class HomeCell: UITableViewCell {
     
     // MARK: Properties
     public static let reuseID: String = "HomeCell"
+    public var model: UserResponse? {
+        didSet {
+            configure()
+        }
+    }
     
- 
     
     
     
@@ -47,7 +52,7 @@ final class HomeCell: UITableViewCell {
     }
     
     // MARK: - Configure
-    public func configure(_ model: UserResponse?) {
+    public func configure() {
         guard let model = model else { return }
         nameLabel.text = model.name
     }
@@ -56,7 +61,7 @@ final class HomeCell: UITableViewCell {
     fileprivate func layout() {
         contentView.addSubview(nameLabel)
         contentView.addSubview(favoriteButton)
-
+        
         NSLayoutConstraint.activate([
             // Label constraints
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
@@ -74,6 +79,12 @@ final class HomeCell: UITableViewCell {
     // MARK: - Actions
     @objc fileprivate func favoriteButtonTapped() {
         print("Favorite button tapped")
+        guard let model = model else { return }
+        // Save Data
+        let user = UserDatabase(context: CoreDataManager.shared.context)
+        user.name = model.name
+        print("Saved database")
+        CoreDataManager.shared.save(user)
     }
 }
 

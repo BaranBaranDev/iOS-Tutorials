@@ -22,7 +22,7 @@ final class MainVC: UITabBarController {
 extension MainVC {
     private func setup() {
         let homeVC = createViewController(rootVC: HomeBuilder.build(), title: "Home", image: "house")
-        let favoriVC = createViewController(rootVC: HomeBuilder.build(), title: "Favorite", image: "star")
+        let favoriVC = createViewController(rootVC: FavoriteBuilder.build(), title: "Favorite", image: "star")
 
         viewControllers = [homeVC, favoriVC]
   

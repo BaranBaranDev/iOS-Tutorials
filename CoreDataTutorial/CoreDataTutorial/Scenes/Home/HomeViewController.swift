@@ -7,6 +7,7 @@
 
 
 import UIKit
+import CoreData
 
 
 // MARK: - HomeDisplayLogic
@@ -106,8 +107,8 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as? HomeCell
         else { return UITableViewCell() }
         
-        let model = userResponseArray[indexPath.item]
-        cell.configure(model)
+        let userResponseModel = userResponseArray[indexPath.item]
+        cell.model = userResponseModel
         return cell
         
     }
