@@ -32,6 +32,7 @@
 		BE3B1EA32C1DBF2F00104C54 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9C2C1DBF2F00104C54 /* DetailViewController.swift */; };
 		BE3B1EA42C1DBF2F00104C54 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9D2C1DBF2F00104C54 /* DetailBuilder.swift */; };
 		BE3B1EA52C1DBF2F00104C54 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B1E9E2C1DBF2F00104C54 /* DetailInteractor.swift */; };
+		BE8366842C5B85E7007E5162 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8366832C5B85E7007E5162 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		BE3B1E9C2C1DBF2F00104C54 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BE3B1E9D2C1DBF2F00104C54 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 		BE3B1E9E2C1DBF2F00104C54 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		BE8366832C5B85E7007E5162 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				BE3B1E902C1DA92400104C54 /* ServiceManager.swift */,
+				BE8366832C5B85E7007E5162 /* CoreDataManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				BE3B1E8E2C1DA7C900104C54 /* HomeBuilder.swift in Sources */,
 				BE3B1E8C2C1DA7C900104C54 /* HomeModels.swift in Sources */,
 				BE3B1E8F2C1DA7C900104C54 /* HomeInteractor.swift in Sources */,
+				BE8366842C5B85E7007E5162 /* CoreDataManager.swift in Sources */,
 				BE3B1E8D2C1DA7C900104C54 /* HomeViewController.swift in Sources */,
 				BE3B1E8B2C1DA7C900104C54 /* HomeRouter.swift in Sources */,
 				BE3B1E912C1DA92400104C54 /* ServiceManager.swift in Sources */,
