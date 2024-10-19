@@ -27,6 +27,13 @@
 		BE80464F2C00A8B000F1950B /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8046492C00A8B000F1950B /* DetailPageViewController.swift */; };
 		BE8046502C00A8B000F1950B /* DetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE80464A2C00A8B000F1950B /* DetailPageInteractor.swift */; };
 		BE8046522C00A8C100F1950B /* DetailPageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8046512C00A8C100F1950B /* DetailPageBuilder.swift */; };
+		BEA178FB2CA2F6470052B27B /* TestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA178F42CA2F6470052B27B /* TestPresenter.swift */; };
+		BEA178FC2CA2F6470052B27B /* TestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA178F52CA2F6470052B27B /* TestWorker.swift */; };
+		BEA178FD2CA2F6470052B27B /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA178F62CA2F6470052B27B /* TestRouter.swift */; };
+		BEA178FE2CA2F6470052B27B /* TestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA178F72CA2F6470052B27B /* TestModels.swift */; };
+		BEA178FF2CA2F6470052B27B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA178F82CA2F6470052B27B /* TestViewController.swift */; };
+		BEA179002CA2F6470052B27B /* TestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA178F92CA2F6470052B27B /* TestBuilder.swift */; };
+		BEA179012CA2F6470052B27B /* TestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA178FA2CA2F6470052B27B /* TestInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +59,13 @@
 		BE8046492C00A8B000F1950B /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		BE80464A2C00A8B000F1950B /* DetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageInteractor.swift; sourceTree = "<group>"; };
 		BE8046512C00A8C100F1950B /* DetailPageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageBuilder.swift; sourceTree = "<group>"; };
+		BEA178F42CA2F6470052B27B /* TestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPresenter.swift; sourceTree = "<group>"; };
+		BEA178F52CA2F6470052B27B /* TestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWorker.swift; sourceTree = "<group>"; };
+		BEA178F62CA2F6470052B27B /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
+		BEA178F72CA2F6470052B27B /* TestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModels.swift; sourceTree = "<group>"; };
+		BEA178F82CA2F6470052B27B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		BEA178F92CA2F6470052B27B /* TestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBuilder.swift; sourceTree = "<group>"; };
+		BEA178FA2CA2F6470052B27B /* TestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +120,7 @@
 		BE614F542BFF464800BBC87C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BEA178F32CA2F6310052B27B /* Test */,
 				BE614F692BFF4D8500BBC87C /* Cell */,
 				BE614F6C2BFF4DD900BBC87C /* HomePage */,
 				BE8046442C00A88800F1950B /* DetailPage */,
@@ -163,6 +178,20 @@
 				BE80464A2C00A8B000F1950B /* DetailPageInteractor.swift */,
 			);
 			path = DetailPage;
+			sourceTree = "<group>";
+		};
+		BEA178F32CA2F6310052B27B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				BEA178F42CA2F6470052B27B /* TestPresenter.swift */,
+				BEA178F52CA2F6470052B27B /* TestWorker.swift */,
+				BEA178F62CA2F6470052B27B /* TestRouter.swift */,
+				BEA178F72CA2F6470052B27B /* TestModels.swift */,
+				BEA178F82CA2F6470052B27B /* TestViewController.swift */,
+				BEA178F92CA2F6470052B27B /* TestBuilder.swift */,
+				BEA178FA2CA2F6470052B27B /* TestInteractor.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,18 +266,25 @@
 			files = (
 				BE80464B2C00A8B000F1950B /* DetailPagePresenter.swift in Sources */,
 				BE614F5F2BFF466D00BBC87C /* HomePageViewController.swift in Sources */,
+				BEA178FF2CA2F6470052B27B /* TestViewController.swift in Sources */,
 				BE614F5E2BFF466D00BBC87C /* HomePageModels.swift in Sources */,
 				BE614F3F2BFF453800BBC87C /* AppDelegate.swift in Sources */,
 				BE8046502C00A8B000F1950B /* DetailPageInteractor.swift in Sources */,
+				BEA178FE2CA2F6470052B27B /* TestModels.swift in Sources */,
 				BE80464E2C00A8B000F1950B /* DetailPageModels.swift in Sources */,
 				BE614F6B2BFF4D9C00BBC87C /* HomeCell.swift in Sources */,
+				BEA178FB2CA2F6470052B27B /* TestPresenter.swift in Sources */,
 				BE614F602BFF466D00BBC87C /* HomePageInteractor.swift in Sources */,
+				BEA178FC2CA2F6470052B27B /* TestWorker.swift in Sources */,
 				BE614F5B2BFF466D00BBC87C /* HomePagePresenter.swift in Sources */,
+				BEA178FD2CA2F6470052B27B /* TestRouter.swift in Sources */,
 				BE80464F2C00A8B000F1950B /* DetailPageViewController.swift in Sources */,
 				BE614F672BFF4B8600BBC87C /* UserResponse.swift in Sources */,
 				BE80464C2C00A8B000F1950B /* DetailPageWorker.swift in Sources */,
 				BE614F652BFF49EE00BBC87C /* ServiceManager.swift in Sources */,
 				BE8046522C00A8C100F1950B /* DetailPageBuilder.swift in Sources */,
+				BEA179012CA2F6470052B27B /* TestInteractor.swift in Sources */,
+				BEA179002CA2F6470052B27B /* TestBuilder.swift in Sources */,
 				BE80464D2C00A8B000F1950B /* DetailPageRouter.swift in Sources */,
 				BE614F5D2BFF466D00BBC87C /* HomePageRouter.swift in Sources */,
 				BE614F622BFF468900BBC87C /* HomePageBuilder.swift in Sources */,
