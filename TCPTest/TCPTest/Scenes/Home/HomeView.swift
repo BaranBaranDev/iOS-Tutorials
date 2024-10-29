@@ -3,7 +3,7 @@ import UIKit
 // MARK: - HomeViewDelegate Protocol
 protocol HomeViewDelegate: AnyObject {
     func didClickConnectToServer()
-    func didClickStartServer()
+    func didClickStartServer(port: String)
     func didClickSendMessage()
 }
 
@@ -20,6 +20,7 @@ final class HomeView: UIView {
         textField.placeholder = "Port numarasını girin"
         textField.borderStyle = .roundedRect
         textField.keyboardType = .numberPad
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -27,6 +28,7 @@ final class HomeView: UIView {
         let textField = UITextField()
         textField.placeholder = "IP adresini girin"
         textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -34,6 +36,7 @@ final class HomeView: UIView {
         let textField = UITextField()
         textField.placeholder = "Göndermek için mesaj girin"
         textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -41,6 +44,7 @@ final class HomeView: UIView {
         let label = UILabel()
         label.text = "Durum: Hazır"
         label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -49,6 +53,7 @@ final class HomeView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Sunucuyu Başlat", for: .normal)
         button.addTarget(self, action: #selector(startServer), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -57,6 +62,7 @@ final class HomeView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Sunucuya Bağlan", for: .normal)
         button.addTarget(self, action: #selector(connectToServer), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -65,6 +71,7 @@ final class HomeView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Mesaj Gönder", for: .normal)
         button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -80,6 +87,7 @@ final class HomeView: UIView {
         ])
         stackView.axis = .vertical
         stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
@@ -93,13 +101,17 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var intrinsicContentSize: CGSize {
+        .init(width: 300, height: 250)
+    }
+    
     // MARK: - Actions
     @objc fileprivate func connectToServer(){
         delegate?.didClickConnectToServer()
     }
     
     @objc fileprivate func startServer(){
-        delegate?.didClickStartServer()
+        delegate?.didClickStartServer(port: String(describing: portTextField.text))
     }
     
     @objc fileprivate func sendMessage(){

@@ -7,35 +7,49 @@
 
 import UIKit
 
+// MARK: - HomeVC
 final class HomeVC: UIViewController {
+    
+    // MARK:  Properties
+    private let server = TCPServer()
+    private let client = TCPClient()
+    
     // MARK: - UI Elements
     private lazy var homeView: UIView = {
         let view = HomeView()
         view.delegate  = self
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemCyan
+        setup()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        homeView.frame = view.bounds
+        homeView.center = view.center
+
+    }
+    
+    // MARK: - Setup
+    private func setup(){
+        view.addSubview(homeView)
     }
 }
 
 // MARK: - HomeViewDelegate
 extension HomeVC: HomeViewDelegate {
+    func didClickStartServer(port: String) {
+        print(port)
+    }
+    
     func didClickConnectToServer() {
         
     }
-    
-    func didClickStartServer() {
-        
-    }
+
     
     func didClickSendMessage() {
         
