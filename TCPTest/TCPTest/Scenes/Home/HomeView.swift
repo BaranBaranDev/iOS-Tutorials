@@ -105,6 +105,12 @@ final class HomeView: UIView {
         .init(width: 300, height: 250)
     }
     
+    // MARK: - Configure
+    @MainActor
+    public func configureUI(statusMessage: String? = nil) {
+        statusLabel.text = statusMessage
+    }
+    
     // MARK: - Actions
     @objc fileprivate func connectToServer(){
         delegate?.didClickConnectToServer()

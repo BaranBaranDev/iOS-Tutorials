@@ -15,7 +15,7 @@ final class HomeVC: UIViewController {
     private let client = TCPClient()
     
     // MARK: - UI Elements
-    private lazy var homeView: UIView = {
+    private lazy var homeView: HomeView = {
         let view = HomeView()
         view.delegate  = self
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +31,7 @@ final class HomeVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeView.center = view.center
-
+        
     }
     
     // MARK: - Setup
@@ -43,13 +43,21 @@ final class HomeVC: UIViewController {
 // MARK: - HomeViewDelegate
 extension HomeVC: HomeViewDelegate {
     func didClickStartServer(port: String) {
-        print(port)
+        // Kullanıcının girdiği port numarasını alıyoruz.
+        guard let port = UInt16(port) else {
+            homeView.configureUI(statusMessage: "Hatalı port")
+            return
+        }
+        
+        // Sunucuyu başlat.
+        server.start(port: port)
+        homeView.configureUI(statusMessage: "Sunucu çalışıyor: \(port)")
     }
     
     func didClickConnectToServer() {
         
     }
-
+    
     
     func didClickSendMessage() {
         
